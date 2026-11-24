@@ -51,8 +51,8 @@ class Zombie:
         if self.dir < 0:
             image.composite_draw(0, 'h', self.x, self.y, 200, 200)
         else:
-            image.draw(self.x, self.y, 200, 200)
+            image.draw(self.x, self.y, self.size, self.size)
         draw_rectangle(*self.get_bb())
 
     def get_bb(self):
-        return self.x - 100, self.y - 100, self.x + 100, self.y + 100
+        return self.x - self.size / 2, self.y - self.size / 2, self.x + self.size / 2, self.y + self.size / 2
