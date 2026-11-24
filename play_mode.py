@@ -46,6 +46,12 @@ def init():
     game_world.add_objects(zombies, 1)
 
     # 소년과 ball 사이의 충돌 페어 등록
+    
+    for zombie in zombies:
+        game_world.add_collision_pairs('zombie:ball', zombie, None)
+    for ball in balls:
+        game_world.add_collision_pairs('zombie:ball', None, ball)
+
     game_world.add_collision_pairs('boy:ball', boy, None)
     for ball in balls:
         game_world.add_collision_pairs('boy:ball', None, ball)
