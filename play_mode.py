@@ -54,6 +54,12 @@ def init():
     for ball in balls:
         game_world.add_collision_pairs('boy:ball', None, ball)
 
+        
+    game_world.add_collision_pairs('boy:zombie', boy, None)
+
+    for zombie in zombies:
+        game_world.add_collision_pairs('boy:zombie', None, zombie)
+
     # 땅과 ball 사이의 충돌 페어 등록 (던진 공은 boy.fire_ball 에서 등록)
     game_world.add_collision_pairs('grass:ball', grass, None)
 
